@@ -36,5 +36,5 @@ export default ->
       str: ''
       
       hasClick: (str) ->
-        console.log 'checked:'
+        console.log 'key:'
         console.log str                                                                                                                                                

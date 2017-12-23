@@ -36,8 +36,8 @@ class list extends Component
         console.log hasClick
         
     onChange = (val) ->
-      hasClick val.target.checked
-      # console.log @props.creatList
+      hasClick val
+      
     onPressEdit = () ->
       prompt(
         'defaultValue'
@@ -65,8 +65,8 @@ class list extends Component
       )
     
     styleComp = (isClick) ->
-      if isClick is true
-        textDecorationLine: 'line-through'
+      textDecorationLine: 'line-through' if isClick is true
+        
 
     c_List.apply @, [
       renderHeader: ' '
@@ -94,7 +94,7 @@ class list extends Component
               key: c.value
               style:
                 styleComp @props.isClick
-              onChange:onChange
+              onChange: () -> onChange(c.value)
               defaultChecked: false
             , c.label
           ]
